@@ -14,14 +14,11 @@
 
     <table class="world">
         {% for i in life.world %}
-            {% set indx_i = loop.index - 1%}
+            {% set indx_i = loop.index - 1 %}
             <tr>
                 {% for j in i %}
-                    {% set indx_j = loop.index - 1%}
-                    {#                    {% if j == 0 %}#}
-                    {#                        <td class="cell living-cell"></td>#}
-                    {#                    {% else %}#}
-                    {#                        <td class="cell"></td>#}
+                    {% set indx_j = loop.index - 1 %}
+
 
                     {% if life.world[indx_i][indx_j] %}
                         <td class="cell living-cell"></td>
@@ -38,7 +35,7 @@
 {% endblock %}
 
 
-{% block scripts  %}
+{% block scripts %}
     {{ super() }}
     <script>setInterval(() => window.location.reload(), 1000);</script>
 {% endblock %}
